@@ -1,0 +1,255 @@
+ html {
+  height: 100%;
+  box-sizing: border-box;
+            }
+ body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  padding-bottom: 3.8rem;
+  box-sizing: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #001427;
+            }
+
+input[type=checkbox] {
+    display: none;
+  }
+  
+  /* Hamburger icon */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #F4D58D;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Show hamburger icon when checkbox is checked */
+  @media screen and (max-width: 642px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #001427;
+      padding: 10px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .hamburger {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+    }
+    
+    .hamburger:hover div {
+      background-color: #9C3848;
+    }
+    
+    input[type=checkbox]:checked ~ .nav-links {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    
+    input[type=checkbox]:checked ~ .hamburger div:nth-child(1) {
+      transform: rotate(-45deg) translate(-8px, 6px);
+    }
+    
+    input[type=checkbox]:checked ~ .hamburger div:nth-child(2) {
+      opacity: 0;
+    }
+    
+    input[type=checkbox]:checked ~ .hamburger div:nth-child(3) {
+      transform: rotate(45deg) translate(-8px, -6px);
+    }
+  }
+  
+/* Apply a box-sizing border-box to all elements to include padding and border in the element's total width and height */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all .2s;
+}
+
+/* Add a background color to the body */
+/* Navigation Styles */
+
+/* Style the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #001427;
+  list-style: none;
+  padding: 20px;
+}
+
+/* Style the logo */
+.logo {
+  font-size: 20px;
+}
+
+.logo a {
+  color: #F4D58D;
+  text-decoration: none;
+}
+
+/* Style the nav links */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  color: #F4D58D;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #9C3848;
+}
+
+/* Style the dropdown */
+.dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    background-color: #F4D58D;
+    min-width: 160px;
+    border: #8D0801 2px solid;
+}
+  
+  .dropdown-content li {
+    margin: 0;
+    list-style-type: none;
+  }
+  
+  .dropdown-content a {
+    color: #001427;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+/* Hero Styles */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #9C3848;
+  color: #F4D58D;
+  padding: 120px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #001427;
+  color: #F4D58D;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #8D0801;
+}
+
+/* Features Styles */
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #F4D58D;
+  padding: 150px;
+}
+
+.feature {
+  flex-basis: 200px;
+  margin: 20px;
+  text-align: center;
+}
+
+.feature img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.feature h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.feature p {
+  font-size: 20px;
+}
+
+/* Footer Styles */
+
+footer {
+  position: absolute;
+  background-color: #001427;
+  color: #F4D58D;
+  text-align: center;
+  padding: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* If your content is larger than the browser's viewport, you'll need to scroll down to see the footer. When the content is small, there's no need to scroll the page. Please note that even if the content is slightly larger than the browser's viewport, the page scrolling effect will occur.*/
