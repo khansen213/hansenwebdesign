@@ -1,3 +1,7 @@
+.warning_text {
+  padding-top: 5%;
+  font-size: xx-small;
+}
  html {
   height: 100%;
   box-sizing: border-box;
@@ -239,6 +243,7 @@ input[type=checkbox] {
   font-size: 20px;
 }
 
+
 /* Footer Styles */
 
 footer {
@@ -252,4 +257,3 @@ footer {
   bottom: 0;
 }
 
-/* If your content is larger than the browser's viewport, you'll need to scroll down to see the footer. When the content is small, there's no need to scroll the page. Please note that even if the content is slightly larger than the browser's viewport, the page scrolling effect will occur.*/
