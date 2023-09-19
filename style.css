@@ -1,11 +1,94 @@
-.warning_text {
-  padding-top: 5%;
-  font-size: xx-small;
+
+/*  Shrink menu as screen shrinks until screen gets to hamburger menu */
+@media screen and (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #001427;
+    padding: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+  
+  input[type=checkbox]:checked ~ .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  input[type=checkbox]:checked ~ div:nth-child(1) {
+    transform: rotate(-45deg) translate(-8px, 6px);
+  }
+  
+  input[type=checkbox]:checked ~ div:nth-child(2) {
+    opacity: 0;
+  }
+  
+  input[type=checkbox]:checked ~ div:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -6px);
+  }
 }
+
+@media screen and (max-width: 539px) {
+  nav ul li a {
+    transition: 1s ease-in;
+    font-size: medium;
+  }
+  
+  nav ul li a::after {
+    transition: 1s ease-out;
+  }
+  
+  .hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #9C3848;
+  color: #F4D58D;
+  padding: 80px;
+  text-align: center;
+  }
+
+  section.hero h1 {
+    transition: 1s ease-in;
+    font-size: 25px;
+  }
+
+  section.hero p {
+    transition: 1s ease-in;
+    font-size: 19px;
+  }
+}
+
+/* Make everything flush to the screen */
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+transition: all .2s;
+}
+
+/* Style the html  */
  html {
-  height: 100%;
-  box-sizing: border-box;
-            }
+  box-sizing: border-box; 
+  }
+
+/* Style the Body */
  body {
   position: relative;
   margin: 0;
@@ -17,92 +100,14 @@
   background-color: #001427;
             }
 
+/* Hide the checkbox trigger  */
 input[type=checkbox] {
     display: none;
   }
-  
-  /* Hamburger icon */
-  .hamburger {
-    display: none;
-    cursor: pointer;
-  }
-  
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #F4D58D;
-    margin: 5px;
-    transition: all 0.3s ease;
-  }
-  
-  /* Show hamburger icon when checkbox is checked */
-  @media screen and (max-width: 642px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 20px;
-      position: relative;
-    }
-    
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #001427;
-      padding: 10px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-  
-    .nav-links li {
-      margin: 10px 0;
-    }
-  
-    .hamburger {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 2;
-    }
-    
-    .hamburger:hover div {
-      background-color: #9C3848;
-    }
-    
-    input[type=checkbox]:checked ~ .nav-links {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-    
-    input[type=checkbox]:checked ~ .hamburger div:nth-child(1) {
-      transform: rotate(-45deg) translate(-8px, 6px);
-    }
-    
-    input[type=checkbox]:checked ~ .hamburger div:nth-child(2) {
-      opacity: 0;
-    }
-    
-    input[type=checkbox]:checked ~ .hamburger div:nth-child(3) {
-      transform: rotate(45deg) translate(-8px, -6px);
-    }
-  }
-  
-/* Apply a box-sizing border-box to all elements to include padding and border in the element's total width and height */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  transition: all .2s;
-}
 
-/* Add a background color to the body */
+/* Hamburger munu styles */
+
 /* Navigation Styles */
-
-/* Style the navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -220,12 +225,19 @@ input[type=checkbox] {
   align-items: center;
   background-color: #F4D58D;
   padding: 150px;
+  min-width: 30%;
 }
 
 .feature {
   flex-basis: 200px;
+  min-width: 30%;
   margin: 20px;
   text-align: center;
+}
+
+.feature p.warning_text {
+  padding-top: 6%;
+  font-size: .7em;
 }
 
 .feature img {
