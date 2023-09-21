@@ -94,11 +94,11 @@ body {
 
 /* Dropdown Menu Styles */
 .dropdown-content {
-  display: none;
+  display: block;
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 2;
+  z-index: -1;
   background-color: #F4D58D;
   min-width: 8em;
   border: #8D0801 2px solid;
@@ -220,11 +220,11 @@ body {
 @media screen and (max-width: 425px) {
   /* Additional styles for smaller screens */
   .dropdown-content {
-    display: none;
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 2;
+    z-index: -1;
     background-color: #F4D58D;
     min-width: 8em;
     border: #8D0801 2px solid;
@@ -295,11 +295,11 @@ input[type=checkbox] {
 
 /* Dropdown Menu Styles */
 .dropdown-content {
-  display: none;
+  display: block;
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 2;
+  z-index: -1;
   background-color: #F4D58D;
   min-width: 8em;
   border: #8D0801 2px solid;
@@ -377,11 +377,11 @@ input[type=checkbox] {
   
   @media screen and (min-width: 768px) {
     .dropdown-content {
-      display: none;
+      display: block;
       position: absolute;
       top: 100%;
       left: 0;
-      z-index: 2;
+      z-index: -1;
       background-color: #F4D58D;
       min-width: 8em;
       border: #8D0801 2px solid;
@@ -405,7 +405,9 @@ input[type=checkbox] {
   
   .dropdown:hover .dropdown-content {
     display: block;
+    z-index: 2;
   }
+  
   
 /* Hero Styles */
 
