@@ -44,6 +44,10 @@
 }
 
 @media screen and (max-width: 539px) {
+  *, *::before, *::after {
+    size: 80%;
+  }
+  
   nav ul li a {
     transition: 1s ease-in;
     font-size: medium;
@@ -65,13 +69,29 @@
   }
 
   section.hero h1 {
-    transition: 1s ease-in;
+    transition: .1s ease-in;
     font-size: 25px;
   }
 
   section.hero p {
-    transition: 1s ease-in;
+    transition: .1s ease-in;
     font-size: 19px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    background-color: #F4D58D;
+    min-width: 8em;
+    border: #8D0801 2px solid;
+    margin: 0;
+    padding: 0;
+    margin-top: 1rem;
   }
 }
 
@@ -106,7 +126,69 @@ input[type=checkbox] {
   }
 
 /* Hamburger munu styles */
+.menu-icon {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  margin-right: 20px; /* Adjust as needed */
+}
 
+.menu {
+  display: none; /* Hide by default */
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  position: relative;
+}
+
+.menu.active {
+  display: flex; /* Show when active */
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  background-color: #F4D58D;
+  min-width: 8em;
+  border: #8D0801 2px solid;
+  margin: 0;
+  padding: 0;
+  margin-top: .6rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger Menu Animation */
+#menu-toggle:checked + .menu {
+  display: flex; /* Show when checked */
+}
+
+#menu-toggle:checked + .menu-icon .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#menu-toggle:checked + .menu-icon .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + .menu-icon .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
 /* Navigation Styles */
 .navbar {
   display: flex;
@@ -153,16 +235,21 @@ input[type=checkbox] {
     position: relative;
   }
   
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 2;
-    background-color: #F4D58D;
-    min-width: 160px;
-    border: #8D0801 2px solid;
-}
+  @media screen and (min-width: 768px) {
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 2;
+      background-color: #F4D58D;
+      min-width: 8em;
+      border: #8D0801 2px solid;
+      margin: 0;
+      padding: 0;
+      margin-top: 1.38rem;
+  } 
+  }
   
   .dropdown-content li {
     margin: 0;
